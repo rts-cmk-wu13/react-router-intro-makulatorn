@@ -1,10 +1,21 @@
 import { Link, NavLink } from "react-router";
+import { useEffect } from "react";
 import Union from "../assets/icons/Union.svg"
 import whitney from "../assets/whitney.svg"
 import '../style/myscooter.sass'
-export default function MyScooter(){
+export default function MyScooter() {
 
-    return(
+    useEffect(() => {
+        document.body.style.backgroundColor = "#FFFFFF",
+        document.body.style.color ="black"
+        return () => {
+            document.body.style.backgroundColor = "",
+            document.body.style.color = ""
+            
+        };
+    }, []);
+    
+    return (
         <main className="myscooter">
             <nav>
                 <div className="nav-con">

@@ -3,10 +3,11 @@ import { Link } from "react-router";
 import Logo from "../assets/Rockit-logo.svg"
 import HomeIcon from "../assets/home.svg"
 import Chevron from "../assets/icons/chevrons-right.svg"
+import '../style/home.sass'
 
 export default function Home() {
     return (
-        <main>
+        <main className="home">
             <section>
                 <div className='home-con'>
                     <img className='home-img' src={Logo} alt="rockit logo" />
@@ -20,7 +21,7 @@ export default function Home() {
                 <h3>Everything you need to know about your scooter is available here in your app</h3>
 
                 <nav className="home-link">
-                    <Link to="/settings"><img src={Chevron} alt="chevron right" /></Link>
+                    <Link to="/MyScooter"><img src={Chevron} alt="chevron right" /></Link>
                 </nav>
             </section>
         </main>

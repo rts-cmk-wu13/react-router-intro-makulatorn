@@ -1,35 +1,48 @@
 import { Link, NavLink } from "react-router";
-import { useEffect } from "react";
 import Union from "../assets/icons/Union.svg"
-import whitney from "../assets/whitney.svg"
+import { useEffect } from "react";
+import Lock from "../assets/icons/lock.svg"
+import UserHeader from "../components/userHeader";
+import InfoBox from "../components/infoBox";
 import '../style/myscooter.sass'
 export default function MyScooter() {
 
     useEffect(() => {
         document.body.style.backgroundColor = "#FFFFFF",
-        document.body.style.color ="black"
+            document.body.style.color = "black"
         return () => {
             document.body.style.backgroundColor = "",
-            document.body.style.color = ""
-            
+                document.body.style.color = ""
+
         };
     }, []);
-    
+
+
     return (
         <main className="myscooter">
-            <nav>
-                <div className="nav-con">
-                    <img className="user-img" src={whitney} alt="whitney img" />
-                    <div className="nav-con-txt">
-                        <h1>Whitney Leon</h1>
-                        <p className="user-txt">Welcome back!</p>
-                    </div>
-                    <Link className="nav-link" to="/Settings"><img src={Union} alt="union" /></Link>
-                </div>
-            </nav>
+            <UserHeader
+                user="Whitney Leon"
+                info="Welcome back!"
+                icon={Union}
+                navigation={"/Settings"} />
 
             <section>
 
+            </section>
+
+            <section>
+                <article className="achievement">
+                    <div className="achievement-txt">
+                        <h3>Whitney's Scooter</h3>
+                        <p>Locked</p>
+                    </div>
+                    <img className="achievement-img" src={Lock} alt="lock icon" />
+                </article>
+
+                <div className="infobox-con">
+                    <InfoBox />
+                </div>
+                
             </section>
         </main>
     )
